@@ -284,3 +284,6 @@ function FonctionCpp()
 	vmap ,c :s:^://<CR>
 endfunction
 
+" Python
+let g:pyflakes_use_quickfix = 1
+
