@@ -69,7 +69,7 @@ set novisualbell
 set so=4 "scroll off: curseur à 12 lignes du bord
 
 "Text formating"
-set noexpandtab
+set expandtab
 set smartindent
 set smarttab
 set autoindent
@@ -201,10 +201,10 @@ nmap <M-right> <C-w><right>
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\ exe "normal g`\"" |
-\ endif
+"  autocmd BufReadPost *
+"\ if line("'\"") > 0 && line("'\"") <= line("$") |
+"\ exe "normal g`\"" |
+"\ endif
 
 "Abbreviation
 iabbrev cad c'est-à-dire
@@ -287,3 +287,4 @@ endfunction
 " Python
 let g:pyflakes_use_quickfix = 1
 
+let g:clang_library_path = '/home/shak/compil/samaxe-64/lib/'
