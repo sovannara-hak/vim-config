@@ -1,5 +1,6 @@
 Sovan vim config files
 
 git clone git@github.com:sovannara-hak/vim-config.git .vim
-ln -sf .vimrc .vim/_vimrc
-ln -sf .gvimrc .gvim/_gvimrc
+cd ~
+ln -sf .vim/_vimrc .vimrc
+ln -sf .gvim/_gvimrc .gvimrc
