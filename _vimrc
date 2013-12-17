@@ -81,7 +81,7 @@ set cindent
 " set wrapmargin=6
 
 " Supprime les espaces en fin de ligne avant de sauver
- autocmd BufWrite * silent! %s/[\r \t]\+$//
+" autocmd BufWrite * silent! %s/[\r \t]\+$//
 
 "Completion
 "setlocal omnifunc=syntaxcomplete#Complete
