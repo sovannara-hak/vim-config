@@ -1,5 +1,4 @@
 "Plugin installé: matchit, VSTreeExplorer, latex-mik
-"source $VIM\vim71\plugin\matchit.vim
 
 "General"
 set nocompatible
@@ -16,6 +15,13 @@ set nobackup
 set showmatch
 set tabstop=4
 set shiftwidth=4
+
+"Auto color urdf
+au BufNewFile,BufRead *.urdf set filetype=xml
+
+"Auto color Kuka script 
+au BufNewFile,BufRead *.dat set filetype=krl
+au BufNewFile,BufRead *.src set filetype=krl
 
 "Latex
 set grepprg=grep\ -nH\ $*
@@ -67,6 +73,12 @@ set hlsearch
 "set columns=160
 set novisualbell
 set so=4 "scroll off: curseur à 12 lignes du bord
+
+"Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "Text formating"
 set expandtab
@@ -125,8 +137,8 @@ inoremap {<CR>  {<CR>}<Esc>O
 "inoremap <> <><ESC>i
 
 "Tree Explorer
-"let treeExplVertical = 0
-let treeExplWinSize = 6
+let treeExplVertical = 1
+let treeExplWinSize = 30
 let treeExplHidden  = 0
 imap <F3> <ESC>:VSTreeExplore<CR>
 nmap <F3> :VSTreeExplore<CR>\
@@ -287,4 +299,3 @@ endfunction
 " Python
 let g:pyflakes_use_quickfix = 1
 
-let g:clang_library_path = '/home/shak/compil/samaxe-64/lib/'
