@@ -16,13 +16,6 @@ set showmatch
 set tabstop=4
 set shiftwidth=4
 
-"Auto color urdf
-au BufNewFile,BufRead *.urdf set filetype=xml
-
-"Auto color Kuka script 
-au BufNewFile,BufRead *.dat set filetype=krl
-au BufNewFile,BufRead *.src set filetype=krl
-
 "Latex
 set grepprg=grep\ -nH\ $*
 filetype indent on
