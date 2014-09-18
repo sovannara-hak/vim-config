@@ -16,6 +16,11 @@ set showmatch
 set tabstop=4
 set shiftwidth=4
 
+set ignorecase
+set smartcase
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+
 "Latex
 set grepprg=grep\ -nH\ $*
 filetype indent on
@@ -166,6 +171,14 @@ function! s:HomeLikeVCpp()
   endif
 endfunction
 
+function! s:insert_gates()
+  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " "
+  execute "normal! Go#endif /* " . gatename . " */"
+  normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 
 " Spell checking
 map <leader>sn ]s
