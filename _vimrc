@@ -172,7 +172,7 @@ function! s:HomeLikeVCpp()
 endfunction
 
 function! s:insert_gates()
-  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  let gatename = substitute(toupper(expand("%:t")), "[\\.\\-]", "_", "g")
   execute "normal! i#ifndef " . gatename
   execute "normal! o#define " . gatename . " "
   execute "normal! Go#endif /* " . gatename . " */"
